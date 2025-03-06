@@ -116,7 +116,7 @@ const ByteAnchorLogo = () => {
                 {/* Byte Anchor Text with Stencil Std Font */}
                 <motion.text
                     x="150"
-                    y="115"
+                    y="90"
                     fontSize="45"
                     fontWeight="400"
                     fontStyle="normal"
