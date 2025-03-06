@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Code2, Server, Smartphone, Mail, Phone, MapPin, Globe, Terminal } from 'lucide-react';
+import ByteAnchorLogo from './components/Logo';
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -63,8 +64,10 @@ function App() {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
-              <Terminal className="w-8 h-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">TechSolutions</span>
+              {/* <Terminal className="w-8 h-8 text-blue-600" />
+              <span className="text-xl font-bold text-gray-900">TechSolutions</span> */}
+              {/* <img src="/assets/images/logo.jpg" alt='company-logo' className='h-50' /> */}
+              <ByteAnchorLogo />
             </div>
             <div className="hidden md:flex space-x-8">
               <button onClick={() => scrollToSection('services')} className="text-gray-600 hover:text-blue-600 transition-colors">Services</button>
@@ -83,9 +86,8 @@ function App() {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                currentSlide === index ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide === index ? 'opacity-100' : 'opacity-0'
+                }`}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
@@ -111,9 +113,8 @@ function App() {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  currentSlide === index ? 'bg-white' : 'bg-white/50'
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${currentSlide === index ? 'bg-white' : 'bg-white/50'
+                  }`}
               ></button>
             ))}
           </div>
@@ -136,7 +137,7 @@ function App() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-20 scroll-mt-16">
+        {/* <section id="testimonials" className="py-20 scroll-mt-16">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-bold text-center mb-16">What Our Clients Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -151,10 +152,10 @@ function App() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Clients Section */}
-        <section id="clients" className="py-20 bg-gray-50 scroll-mt-16">
+        {/* <section id="clients" className="py-20 bg-gray-50 scroll-mt-16">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-bold text-center mb-16">Our Clients</h2>
             <div className="flex overflow-x-hidden">
@@ -170,7 +171,7 @@ function App() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact Section */}
         <section id="contact" className="py-20 scroll-mt-16">
@@ -180,17 +181,17 @@ function App() {
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <Phone className="w-6 h-6 text-blue-600 mr-4" />
                     <span>+1 (555) 123-4567</span>
-                  </div>
+                  </div> */}
                   <div className="flex items-center">
                     <Mail className="w-6 h-6 text-blue-600 mr-4" />
-                    <span>contact@yourcompany.com</span>
+                    <span>contact@byteanchor.com</span>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="w-6 h-6 text-blue-600 mr-4" />
-                    <span>123 Business Street, Suite 100, City, Country</span>
+                    <span>Hyderabad, India</span>
                   </div>
                 </div>
               </div>
