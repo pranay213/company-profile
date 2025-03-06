@@ -118,9 +118,9 @@ const ByteAnchorLogo = () => {
                     x="150"
                     y="115"
                     fontSize="45"
-                    fontWeight="bold"
+                    fontWeight="700"
                     fill={isHovered ? colors.textHover : colors.text}
-                    letterSpacing={'5px'}
+                    letterSpacing={'2px'}
                     fontFamily="Stardos Stencil, sans-serif"
                     filter={isHovered ? "url(#glow)" : ""}
                     initial={{ opacity: 0, y: -20 }}
