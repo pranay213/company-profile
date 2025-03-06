@@ -16,7 +16,7 @@ const ByteAnchorLogo = () => {
 
     return (
         <div
-            className="fixed left-4 cursor-pointer"
+            className="fixed left-0 cursor-pointer"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
