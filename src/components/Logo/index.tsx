@@ -115,13 +115,13 @@ const ByteAnchorLogo = () => {
 
                 {/* Byte Anchor Text with Stencil Std Font */}
                 <motion.text
-                    x="150"
+                    x="145"
                     y="100"
                     fontSize="45"
-                    fontWeight="400"
+                    fontWeight="700"
                     fontStyle="normal"
                     fill={isHovered ? colors.textHover : colors.text}
-                    letterSpacing={'2px'}
+                    letterSpacing={'0px'}
                     fontFamily="stencil-std, sans-serif"
                     filter={isHovered ? "url(#glow)" : ""}
                     initial={{ opacity: 0, y: -20 }}
