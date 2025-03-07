@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+//import "../styles.css"; // Ensure your styles include the Typekit import
 
 const ByteAnchorLogo = () => {
     const [isHovered, setIsHovered] = useState(false);
 
+    // Colors with hover variants
     const colors = {
-        primary: "#0074A6",
-        primaryHover: "#00A3E0",
-        accent: "#FFFFFF",
-        text: "#0074A6",
-        textHover: "#00A3E0",
-        underline: "#FFD700",
-        techText: "#FFFFFF",  // White color for technologies
+        primary: "#0074A6",       // Original blue
+        primaryHover: "#00A3E0",  // Lighter blue for hover
+        accent: "#FFFFFF",        // White
+        text: "#0074A6",          // Original text color
+        textHover: "#00A3E0",     // Hover text color
+        underline: "#FFD700"      // Gold underline for contrast
     };
 
     return (
@@ -20,8 +21,11 @@ const ByteAnchorLogo = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="300">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="300">
                 <defs>
+                    <style>
+                        @import url("https://use.typekit.net/oyo8exc.css");
+                    </style>
                     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                         <feGaussianBlur stdDeviation={isHovered ? "3" : "0"} result="blur" />
                         <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -45,6 +49,27 @@ const ByteAnchorLogo = () => {
                         stiffness: 300
                     }}
                 />
+                <motion.circle
+                    cx="80"
+                    cy="100"
+                    r="50"
+                    fill={colors.accent}
+                    clipPath="url(#half)"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{
+                        opacity: 1,
+                        scale: isHovered ? 1.05 : 1
+                    }}
+                    transition={{
+                        duration: 0.3,
+                        delay: 0.3,
+                        type: "spring",
+                        stiffness: 300
+                    }}
+                />
+                <clipPath id="half">
+                    <rect x="80" y="50" width="50" height="100" />
+                </clipPath>
 
                 {/* Initials B & A */}
                 <motion.text
@@ -88,13 +113,15 @@ const ByteAnchorLogo = () => {
                     A
                 </motion.text>
 
-                {/* Byte Anchor Text */}
+                {/* Byte Anchor Text with Stencil Std Font */}
                 <motion.text
-                    x="145"
+                    x="150"
                     y="100"
                     fontSize="45"
-                    fontWeight="700"
+                    fontWeight="400"
+                    fontStyle="normal"
                     fill={isHovered ? colors.textHover : colors.text}
+                    letterSpacing={'2px'}
                     fontFamily="stencil-std, sans-serif"
                     filter={isHovered ? "url(#glow)" : ""}
                     initial={{ opacity: 0, y: -20 }}
@@ -110,7 +137,7 @@ const ByteAnchorLogo = () => {
                     BYTE ANCHOR
                 </motion.text>
 
-                {/* Animated underline */}
+                {/* Animated underline that appears on hover */}
                 <motion.rect
                     x="150"
                     y="125"
@@ -127,28 +154,20 @@ const ByteAnchorLogo = () => {
                     transition={{ duration: 0.4 }}
                 />
 
-                {/* Technologies below Byte Anchor */}
-                <motion.text
-                    x="150"
-                    y="160"
-                    fontSize="20"
-                    fontWeight="600"
-                    fill={colors.techText}
-                    fontFamily="Arial, sans-serif"
-                    textAnchor="start"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{
-                        opacity: isHovered ? 1 : 0,
-                        y: isHovered ? 160 : 170
-                    }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 1.2
-                    }}
-                    style={{ textShadow: "2px 2px 4px black" }}
-                >
-                    React | Framer Motion | SVG | UI Design
-                </motion.text>
+                {/* Light glow beneath the text when hovered */}
+                {isHovered && (
+                    <motion.ellipse
+                        cx="300"
+                        cy="140"
+                        rx="180"
+                        ry="25"
+                        fill={colors.primaryHover}
+                        opacity="0.15"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.15 }}
+                        transition={{ duration: 0.5 }}
+                    />
+                )}
             </svg>
         </div>
     );
