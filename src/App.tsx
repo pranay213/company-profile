@@ -61,7 +61,7 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
-        <div className="container mx-auto px-6">
+        <div className="px-6">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
               {/* <Terminal className="w-8 h-8 text-blue-600" />
